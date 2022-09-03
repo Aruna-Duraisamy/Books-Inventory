@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "0Y5AxHE7V37mJ/KXpXKySVLhQWWR/tdJbAbAd0Mr4d7rzuTtX6hJ7UfZ4lZpaaMPoOdJ4fiFMEVEobJn21XHrw==",
+  "success": true,
+  "projectFilePath": "/Users/arunaganeshraj/Desktop/GitHubProjects/Books-Inventory/Books-Inventory.csproj",
+  "expectedPackageFiles": [
+    "/Users/arunaganeshraj/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/arunaganeshraj/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/arunaganeshraj/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/Users/arunaganeshraj/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/arunaganeshraj/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/arunaganeshraj/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
