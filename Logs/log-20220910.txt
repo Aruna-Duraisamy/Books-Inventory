@@ -1,0 +1,7 @@
+2022-09-10 03:35:58.984 +01:00 [INF] Now listening on: https://localhost:7195
+2022-09-10 03:35:59.114 +01:00 [INF] Now listening on: http://localhost:5270
+2022-09-10 03:35:59.153 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-10 03:35:59.154 +01:00 [INF] Hosting environment: Development
+2022-09-10 03:35:59.154 +01:00 [INF] Content root path: /Users/arunaganeshraj/Desktop/GitHubProjects/Books-Inventory/
+2022-09-10 03:36:59.085 +01:00 [INF] calling GetWeatherForecast
+2022-09-10 03:42:43.464 +01:00 [INF] Application is shutting down...
