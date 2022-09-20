@@ -1,4 +1,6 @@
 using Books_Inventory.Data;
+using Books_Inventory.Data.Services;
+using Books_Inventory.Mappings;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -10,6 +12,8 @@ string connectionString = builder.Configuration.GetConnectionString("DefaultConn
 builder.Services.AddControllers();
 //Configure DBcontext with SQL Server
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddAutoMapper(typeof(MappingProfiles));
+builder.Services.AddTransient<BookService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
