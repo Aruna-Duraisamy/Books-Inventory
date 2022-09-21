@@ -21,8 +21,8 @@ namespace Books_Inventory.Data.Services
         //Add Book
         public void AddBook(BookDto bookDto)
         {
-            //var book = _mapper.Map<Book>(bookDto);
-            var book = new Book()
+            var book = _mapper.Map<Book>(bookDto);
+            /* var book = new Book()
             {
                 Title = bookDto.Title,
                 Description = bookDto.Description,
@@ -33,9 +33,12 @@ namespace Books_Inventory.Data.Services
                 CoverUrl = bookDto.CoverUrl,
                 DateRead = bookDto.IsRead ? bookDto.DateRead : null,
                 DateAdded = DateTime.Now
-            };
+            }; */
+            book.DateAdded = DateTime.Now;
             _context.Add(book);
             _context.SaveChanges();
         }
+
+        public List<Book> GetAllBooks() => _context.Books.ToList();
     }
 }

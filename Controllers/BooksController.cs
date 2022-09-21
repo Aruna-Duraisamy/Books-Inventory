@@ -20,10 +20,17 @@ namespace Books_Inventory.Controllers
         }
 
         [HttpPost("add-book")]
-        public IActionResult AddBook([FromBody]BookDto bookDto)
+        public IActionResult AddBook([FromBody] BookDto bookDto)
         {
             _bookService.AddBook(bookDto);
             return Ok();
+        }
+
+        [HttpGet("get-all-books")]
+        public IActionResult GetBooks()
+        {
+            var allBooks = _bookService.GetAllBooks();
+            return Ok(allBooks);
         }
     }
 }

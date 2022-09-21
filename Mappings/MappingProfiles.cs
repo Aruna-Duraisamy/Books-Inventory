@@ -14,12 +14,12 @@ namespace Books_Inventory.Mappings
             CreateMap<Book, BookDto>()
             .ForMember(dest => dest.Rate, opt =>
             {
-                opt.PreCondition(src => src.IsRead);
+                //opt.PreCondition(src => src.IsRead);
                 opt.MapFrom(src => src.IsRead ? src.Rate : null);
             })
             .ForMember(dest => dest.DateRead, opt =>
             {
-                opt.PreCondition(src => src.IsRead);
+                //opt.PreCondition(src => src.IsRead);
                 opt.MapFrom(src => src.IsRead ? src.DateRead : null);
             }).ReverseMap();
         }
