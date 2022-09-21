@@ -40,5 +40,7 @@ namespace Books_Inventory.Data.Services
         }
 
         public List<Book> GetAllBooks() => _context.Books.ToList();
+
+        public Book? GetBookById(int id) => _context.Books.FirstOrDefault(n => n.Id == id);
     }
 }

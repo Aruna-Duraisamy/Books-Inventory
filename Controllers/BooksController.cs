@@ -32,5 +32,13 @@ namespace Books_Inventory.Controllers
             var allBooks = _bookService.GetAllBooks();
             return Ok(allBooks);
         }
+
+        [HttpGet("get-book-by-id/{id}")]
+        public IActionResult GetBookById(int id)
+        {
+            var book = _bookService.GetBookById(id);
+            if (book == null) return NotFound();
+            return Ok(book);
+        }
     }
 }
