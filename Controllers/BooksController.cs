@@ -40,5 +40,14 @@ namespace Books_Inventory.Controllers
             if (book == null) return NotFound();
             return Ok(book);
         }
+
+        [HttpPut("update-book-by-id/{id}")]
+        public IActionResult UpdateBookById(int id, [FromBody] BookDto bookDto)
+        {
+            var updatedBook = _bookService.UpdateBookById(id, bookDto);
+            if (updatedBook == null) return NotFound();
+            return Ok(updatedBook);
+        }
+
     }
 }
