@@ -43,7 +43,8 @@ namespace Books_Inventory.Data.Services
 
         public Book? GetBookById(int id) => _context.Books.FirstOrDefault(n => n.Id == id);
 
-        public Book? UpdateBookById(int id, BookDto bookDto) {
+        public Book? UpdateBookById(int id, BookDto bookDto)
+        {
             var book = _context.Books.FirstOrDefault(n => n.Id == id);
             if (book != null)
             {
@@ -58,6 +59,16 @@ namespace Books_Inventory.Data.Services
                 _context.SaveChanges();
             }
             return book;
+        }
+
+        public void DeleteBookById(int id)
+        {
+            var book = _context.Books.FirstOrDefault(n => n.Id == id);
+            if (book != null)
+            {
+                _context.Books.Remove(book);
+                _context.SaveChanges();
+            }
         }
     }
 }
