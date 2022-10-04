@@ -22,6 +22,9 @@ namespace Books_Inventory.Mappings
                 //opt.PreCondition(src => src.IsRead);
                 opt.MapFrom(src => src.IsRead ? src.DateRead : null);
             }).ReverseMap();
+
+            CreateMap<Author, AuthorDto>().ReverseMap();
+            CreateMap<Publisher, PublisherDto>().ReverseMap();
         }
     }
 }
