@@ -21,5 +21,7 @@ namespace Books_Inventory.Data.Models
         //Navigation Property
         public int PublisherId { get; set; }
         public Publisher Publisher { get; set; }
+
+        public List<Book_Author> Authors { get; set; }
     }
 }
