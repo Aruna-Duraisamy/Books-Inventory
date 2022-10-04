@@ -17,5 +17,9 @@ namespace Books_Inventory.Data.Models
         public DateTime DateAdded { get; set; }
         public bool IsRead { get; set; }
         public DateTime? DateRead { get; set; }
+
+        //Navigation Property
+        public int PublisherId { get; set; }
+        public Publisher Publisher { get; set; }
     }
 }
