@@ -26,7 +26,6 @@ namespace Books_Inventory.Data.Services
             {
                 Title = bookDto.Title,
                 Description = bookDto.Description,
-                Author = bookDto.Author,
                 Genre = bookDto.Genre,
                 IsRead = bookDto.IsRead,
                 Rate = bookDto.IsRead ? bookDto.Rate : null,
@@ -35,8 +34,19 @@ namespace Books_Inventory.Data.Services
                 DateAdded = DateTime.Now
             }; */
             book.DateAdded = DateTime.Now;
-            _context.Add(book);
+            _context.Books.Add(book);
             _context.SaveChanges();
+
+            foreach (var id in bookDto.AuthorIds)
+            {
+                var book_author = new Book_Author()
+                {
+                    BookId = book.Id,
+                    AuthorId = id
+                };
+                _context.Books_Authors.Add(book_author);
+                _context.SaveChanges();
+            }
         }
 
         public List<Book> GetAllBooks() => _context.Books.ToList();
@@ -50,7 +60,6 @@ namespace Books_Inventory.Data.Services
             {
                 book.Title = bookDto.Title;
                 book.Description = bookDto.Description;
-                book.Author = bookDto.Author;
                 book.Genre = bookDto.Genre;
                 book.IsRead = bookDto.IsRead;
                 book.Rate = bookDto.IsRead ? bookDto.Rate : null;

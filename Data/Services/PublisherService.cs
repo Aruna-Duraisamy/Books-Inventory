@@ -21,7 +21,7 @@ namespace Books_Inventory.Data.Services
         public void AddPublisher(PublisherDto publisherDto)
         {
             var publisher = _mapper.Map<Publisher>(publisherDto);
-            _context.Add(publisher);
+            _context.Publishers.Add(publisher);
             _context.SaveChanges();
         }
     }

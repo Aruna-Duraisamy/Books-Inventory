@@ -21,7 +21,7 @@ namespace Books_Inventory.Data.Services
         public void AddAuthor(AuthorDto authorDto)
         {
             var author = _mapper.Map<Author>(authorDto);
-            _context.Add(author);
+            _context.Authors.Add(author);
             _context.SaveChanges();
         }
     }
