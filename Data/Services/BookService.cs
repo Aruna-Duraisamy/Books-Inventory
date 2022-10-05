@@ -51,7 +51,28 @@ namespace Books_Inventory.Data.Services
 
         public List<Book> GetAllBooks() => _context.Books.ToList();
 
-        public Book? GetBookById(int id) => _context.Books.FirstOrDefault(n => n.Id == id);
+        public BookWithAuthorsDto? GetBookById(int id)
+        {
+            var bookWithAuthors = _context.Books
+            .Where(n => n.Id == id)
+            .Select
+            (
+                book => new BookWithAuthorsDto()
+                {
+                    Title = book.Title,
+                    Description = book.Description,
+                    Genre = book.Genre,
+                    IsRead = book.IsRead,
+                    Rate = book.IsRead ? book.Rate : null,
+                    CoverUrl = book.CoverUrl,
+                    DateRead = book.IsRead ? book.DateRead : null,
+                    PublisherName = book.Publisher.Name,
+                    AuthorsName = book.Authors.Select(m => m.Author.FullName).ToList()
+                }
+            )
+            .FirstOrDefault();
+            return bookWithAuthors;
+        }
 
         public Book? UpdateBookById(int id, BookDto bookDto)
         {
