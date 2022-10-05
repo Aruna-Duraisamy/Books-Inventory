@@ -9,4 +9,10 @@ namespace Books_Inventory.Data.Models
     {
         public string FullName { get; set; }
     }
+
+    public class AuthorBooksDto
+    {
+        public string FullName { get; set; }
+        public List<string> BooksName { get; set; }
+    }
 }

@@ -24,5 +24,13 @@ namespace Books_Inventory.Controllers
             _authorService.AddAuthor(authorDto);
             return Ok();
         }
+
+        [HttpGet("get-author-by-id/{id}")]
+        public IActionResult GetAuthorBooksById(int id)
+        {
+            var authorBooks = _authorService.GetAuthorBooksById(id);
+            if (authorBooks == null) return NotFound();
+            return Ok(authorBooks);
+        }
     }
 }
