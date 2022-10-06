@@ -24,5 +24,23 @@ namespace Books_Inventory.Data.Services
             _context.Publishers.Add(publisher);
             _context.SaveChanges();
         }
+
+        public PublisherBooksWithAuthorsDto GetPublisherBooksWithAuthors(int publisherId)
+        {
+            var publisherBooks = _context.Publishers
+            .Where(n => n.Id == publisherId)
+            .Select(
+                b => new PublisherBooksWithAuthorsDto()
+                {
+                    Name = b.Name,
+                    BookAndAuthors = b.Books.Select(c => new BookAuthorsDto()
+                    {
+                        BookTitle = c.Title,
+                        BookAuthors = c.Authors.Select(m => m.Author.FullName).ToList()
+                    }).ToList()
+                }
+            ).FirstOrDefault();
+            return publisherBooks;
+        }
     }
 }

@@ -24,5 +24,13 @@ namespace Books_Inventory.Controllers
             _publisherService.AddPublisher(publisherDto);
             return Ok();
         }
+
+        [HttpGet("get-publisher-book-with-authors/{publisherId}")]
+        public IActionResult GetPublisherBooksWithAuthors(int publisherId)
+        {
+            var publisherBooks = _publisherService.GetPublisherBooksWithAuthors(publisherId);
+            if (publisherBooks == null) return NotFound();
+            return Ok(publisherBooks);
+        }
     }
 }
